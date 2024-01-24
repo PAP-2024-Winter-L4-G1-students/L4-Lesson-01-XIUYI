@@ -5,6 +5,10 @@
 4. Similarly, select the #score p tag by its id and assign it a variable.
 5. Also, select the game over div by its id and assign it a variable.
 */
+let scoreboard = 0;
+const fireflyPic      = document.getElementById('firefly');//no #
+const scoreDisplay    = document.querySelector('#score'); //#
+const gameOverDisplay = document.querySelector('#gameover');//#
 
 /* Exercise 2 - CSS Review
 1. In style.css, select the game over div by its id and hide it using the display property.
@@ -15,6 +19,11 @@
 Inside scoring, increase the score by one and show the new score on the screen 
 * Hint: Remember from Exercise 1, we already have variables for storing the score, the score element, and the firefly element.
 2. To call the function, add a click event listener to the firefly. */
+function scoring(){
+    scoreboard +=1 ; // increase variable by 1 or ++ or socreboard = socreboard +1;
+    scoreDisplay.textContent = scoreboard;
+}
+firefly.addEventListener('click',scoring); // active function
 
 
 
@@ -30,13 +39,23 @@ Set its value to a template literal. Insert the random numbers as values of the 
 5. Use the cssText property to apply the new position
 6. Call the function
 */
+function flyFirefly(){
+    const randomNumTop = Math.floor (600 * Math.random()); /*Math.floor ->> randown
+                                                             Math.random() ->> from 0 to 0.99*/
+    const randomNumLeft =Math.floor (1200 * Math.random());
 
+    const newPositonCSS = `top:${randomNumTop}px; left:${randomNumLeft}px;`;
+    fireflyPic.style.cssText = newPositonCSS;
+
+}
+flyFirefly();
 
 
 /* Exercise 5 - Timing functions 
 1. Edit the function call in the last exercise to call function flyFirefly using setInterval every 1000 milliseconds
 2. Assign the function call a variable called interval 
 */
+
 
 
 /* Exercie 6

@@ -28,6 +28,9 @@ body {
   border: 2px solid white;
 }
 
+#game-over{
+  display:none; /*hide things from CSS*/
+}
 h1 {
   font-size: 2rem;
   color:lightyellow;
@@ -35,7 +38,6 @@ h1 {
 }
 
 #game-over{
-  
   position:absolute;
   top:200px;
   width:100%;
@@ -52,3 +54,4 @@ h1 {
   top:10px;
   font-size:4rem;
 }
+
