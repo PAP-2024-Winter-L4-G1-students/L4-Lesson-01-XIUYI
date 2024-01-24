@@ -48,13 +48,14 @@ function flyFirefly(){
     fireflyPic.style.cssText = newPositonCSS;
 
 }
-flyFirefly();
+// flyFirefly();
 
 
 /* Exercise 5 - Timing functions 
 1. Edit the function call in the last exercise to call function flyFirefly using setInterval every 1000 milliseconds
 2. Assign the function call a variable called interval 
 */
+let interval = setInterval(flyFirefly,1000);
 
 
 
@@ -66,7 +67,12 @@ Inside the function:
 4. Use the style property to set display to block on the game over div
 5. Call function end using setTimeout() at 60000 milliseconds
 */
-
+function end(){
+    clearInterval(interval);
+    firefly.removeEventListener('click',scoring);
+    gameOver.style.display = 'block';
+}
+let endGamae = setTimeout(end,60000);
 /* ********************************************************
 Practice Session ******************************************
 
@@ -82,3 +88,7 @@ Make the firefly picture change every time the firefly moves.
  Show a game timer counting down the number of seconds left to play.
  Rotate the firefly picture when it moves.
  */
+ firstImage  = './images/firefly-1.png'
+ secondImage = './images/firefly-2.png'
+ thirdImage  = './images/firefly-3.png'
+
