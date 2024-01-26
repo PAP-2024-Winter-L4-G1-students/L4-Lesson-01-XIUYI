@@ -8,7 +8,7 @@
 let scoreboard = 0;
 const fireflyPic      = document.getElementById('firefly');//no #
 const scoreDisplay    = document.querySelector('#score'); //#
-const gameOverDisplay = document.querySelector('#gameover');//#
+const gameOverDisplay = document.querySelector('#game-over');//#
 
 /* Exercise 2 - CSS Review
 1. In style.css, select the game over div by its id and hide it using the display property.
@@ -69,10 +69,10 @@ Inside the function:
 */
 function end(){
     clearInterval(interval);
-    firefly.removeEventListener('click',scoring);
-    gameOver.style.display = 'block';
+    firefly.removeEventListener('click',scoring);//'click' event need to be specify
+    gameOverDisplay.style.cssText = 'display: block';//or gameOverDisplay.style.display = 'block';
 }
-let endGamae = setTimeout(end,60000);
+etTimeout(end,20000);
 /* ********************************************************
 Practice Session ******************************************
 
@@ -88,7 +88,28 @@ Make the firefly picture change every time the firefly moves.
  Show a game timer counting down the number of seconds left to play.
  Rotate the firefly picture when it moves.
  */
- firstImage  = './images/firefly-1.png'
- secondImage = './images/firefly-2.png'
- thirdImage  = './images/firefly-3.png'
 
+ const fireFlyPic  =document.querySelector('#firefly')
+ const fireFlyImage={
+    image :'./images/firefly-1.png',
+    image :'./images/firefly-2.png',
+    image : './images/firefly-3.png'
+    };// create an array
+
+
+// for (let i in fireFlyImage){
+//     let key = i;
+//     let value = fireFlyImage[i];
+// }
+
+// - Select one of the firefly images from the array using the random number
+// - Use the src property to set the new picture.
+
+function flyFirefly(){
+    const randomIndex = Math.floor (3 * Math.random());
+    const selectedImage = fireFlyImage[randomIndex];
+    fireFlyPic.src = selectedImage ;
+
+
+}
+flyFirefly();
