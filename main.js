@@ -46,6 +46,7 @@ function flyFirefly(){
 
     const newPositonCSS = `top:${randomNumTop}px; left:${randomNumLeft}px;`;
     fireflyPic.style.cssText = newPositonCSS;
+    flyFireflyPic();
 
 }
 // flyFirefly();
@@ -72,7 +73,7 @@ function end(){
     firefly.removeEventListener('click',scoring);//'click' event need to be specify
     gameOverDisplay.style.cssText = 'display: block';//or gameOverDisplay.style.display = 'block';
 }
-etTimeout(end,20000);
+setTimeout(end,20000);
 /* ********************************************************
 Practice Session ******************************************
 
@@ -89,13 +90,14 @@ Make the firefly picture change every time the firefly moves.
  Rotate the firefly picture when it moves.
  */
 
- const fireFlyPic  =document.querySelector('#firefly')
- const fireFlyImage={
-    image :'./images/firefly-1.png',
-    image :'./images/firefly-2.png',
-    image : './images/firefly-3.png'
-    };// create an array
-
+ const fireFlyPic  = document.querySelector('#firefly')
+ const fireFlyImage=[
+    "firefly-1.png",
+    "firefly-2.png",
+    "firefly-3.png",
+    "forest-night.jpg"
+ ];// create an array
+ 
 
 // for (let i in fireFlyImage){
 //     let key = i;
@@ -105,11 +107,9 @@ Make the firefly picture change every time the firefly moves.
 // - Select one of the firefly images from the array using the random number
 // - Use the src property to set the new picture.
 
-function flyFirefly(){
+function flyFireflyPic(){
     const randomIndex = Math.floor (3 * Math.random());
     const selectedImage = fireFlyImage[randomIndex];
     fireFlyPic.src = selectedImage ;
-
-
 }
-flyFirefly();
+flyFireflyPic();
